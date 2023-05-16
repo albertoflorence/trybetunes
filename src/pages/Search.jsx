@@ -21,6 +21,7 @@ function renderAlbum(props) {
       <p>{artistName}</p>
       <p>{collectionName}</p>
       <p>{collectionPrice}</p>
+      <p>{artworkUrl100}</p>
       <p>{releaseDate}</p>
       <p>{trackCount}</p>
       <Link
