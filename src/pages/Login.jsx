@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { createUser } from '../services/userAPI';
+import { loginValidate } from '../validate';
 
 export default function Login({ history }) {
   const [input, setInput] = useState({ name: '' });
@@ -13,13 +14,7 @@ export default function Login({ history }) {
   };
 
   useEffect(() => {
-    const { name } = input;
-    const MIN_LENGTH = 3;
-    if (name.length >= MIN_LENGTH) {
-      setIsValid(true);
-    } else {
-      setIsValid(false);
-    }
+    setIsValid(loginValidate(input.name));
   }, [input]);
 
   const handleSubmit = async (event) => {
