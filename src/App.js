@@ -15,19 +15,33 @@ class App extends React.Component {
       <Switch>
         <Route path="/" component={ Login } exact />
         <Route path="/search">
-          <Layout><Search /></Layout>
+          <Layout>
+            <Search />
+          </Layout>
         </Route>
-        <Route path="/album/:id">
-          <Layout><Album /></Layout>
-        </Route>
+        <Route
+          path="/album/:id"
+          render={ ({ match }) => (
+            <Layout>
+              <Album id={ match.params.id } />
+            </Layout>
+          ) }
+        />
+
         <Route path="/favorites">
-          <Layout><Favorites /></Layout>
+          <Layout>
+            <Favorites />
+          </Layout>
         </Route>
         <Route path="/profile" exact>
-          <Layout><Profile /></Layout>
+          <Layout>
+            <Profile />
+          </Layout>
         </Route>
         <Route path="/profile/Edit">
-          <Layout><Edit /></Layout>
+          <Layout>
+            <Edit />
+          </Layout>
         </Route>
         <Route path="*" component={ NotFound } />
       </Switch>
