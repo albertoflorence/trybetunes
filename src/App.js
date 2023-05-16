@@ -7,17 +7,28 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile/page';
 import Edit from './pages/Profile/Edit';
 import NotFound from './pages/NotFound';
+import Layout from './components/Layout';
 
 class App extends React.Component {
   render() {
     return (
       <Switch>
         <Route path="/" component={ Login } exact />
-        <Route path="/search" component={ Search } />
-        <Route path="/album/:id" component={ Album } />
-        <Route path="/favorites" component={ Favorites } />
-        <Route path="/profile" component={ Profile } exact />
-        <Route path="/profile/Edit" component={ Edit } />
+        <Route path="/search">
+          <Layout><Search /></Layout>
+        </Route>
+        <Route path="/album/:id">
+          <Layout><Album /></Layout>
+        </Route>
+        <Route path="/favorites">
+          <Layout><Favorites /></Layout>
+        </Route>
+        <Route path="/profile" exact>
+          <Layout><Profile /></Layout>
+        </Route>
+        <Route path="/profile/Edit">
+          <Layout><Edit /></Layout>
+        </Route>
         <Route path="*" component={ NotFound } />
       </Switch>
     );
