@@ -22,9 +22,9 @@ export default function Album({ id }) {
       <span data-testid="artist-name">{info.artistName}</span>
       <span data-testid="album-name">{info.collectionName}</span>
       <div>
-        {tracks.map(
-          ({ trackId, ...props }) => <MusicCard key={ trackId } { ...props } />,
-        )}
+        {tracks.map(({ trackId, ...props }) => (
+          <MusicCard key={ trackId } trackId={ trackId } { ...props } />
+        ))}
       </div>
     </section>
   );
