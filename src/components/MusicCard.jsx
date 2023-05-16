@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default function MusicCard({ previewUrl, trackName, trackId }) {
   const [favorite, setFavorite] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getFavoriteSongs()
+      .then((songs) => Boolean(songs.find((song) => song.trackId === trackId)))
+      .then(setFavorite);
+  }, [trackId]);
 
   const handleChange = async () => {
     setLoading(true);
