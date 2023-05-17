@@ -19,7 +19,6 @@ function renderAlbum(props) {
     <div key={ collectionId }>
       <p>{artistId}</p>
       <p>{artistName}</p>
-      <p>{collectionName}</p>
       <p>{collectionPrice}</p>
       <p>{artworkUrl100}</p>
       <p>{releaseDate}</p>
