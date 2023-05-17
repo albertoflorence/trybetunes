@@ -33,15 +33,13 @@ export default function MusicCard({ onChange = undefined, ...props }) {
       {loading ? (
         <span>Carregando...</span>
       ) : (
-        <label>
-          Favorita
-          <input
-            data-testid={ `checkbox-music-${trackId}` }
-            type="checkbox"
-            checked={ favorite }
-            onChange={ handleChange }
-          />
-        </label>
+        <input
+          data-testid={ `checkbox-music-${trackId}` }
+          type="checkbox"
+          checked={ favorite }
+          onChange={ handleChange }
+          aria-label="Favorita"
+        />
       )}
     </div>
   );
