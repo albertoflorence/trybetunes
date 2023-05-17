@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import { useFavorite } from '../hooks/useFavorite';
 
 export default function MusicCard({ previewUrl, trackName, trackId }) {
-  const [favorite, setFavorite] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    getFavoriteSongs()
-      .then((songs) => Boolean(songs.find((song) => song.trackId === trackId)))
-      .then(setFavorite);
-  }, [trackId]);
+  const { loading, hasItem, toggle } = useFavorite();
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = async () => {
-    setLoading(true);
-    const action = favorite ? removeSong : addSong;
-    await action({ trackId });
-    setFavorite(!favorite);
-    setLoading(false);
+    setIsLoading(true);
+    await toggle({ previewUrl, trackName, trackId });
+    setIsLoading(false);
   };
 
   return (
@@ -28,13 +20,13 @@ export default function MusicCard({ previewUrl, trackName, trackId }) {
         O seu navegador não suporta o elemento
         <code>audio</code>
       </audio>
-      {loading ? (
+      {(loading || isLoading) ? (
         <span>Carregando...</span>
       ) : (
         <input
           data-testid={ `checkbox-music-${trackId}` }
           type="checkbox"
-          checked={ favorite }
+          checked={ hasItem(trackId) }
           onChange={ handleChange }
         />
       )}
