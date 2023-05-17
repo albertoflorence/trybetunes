@@ -27,7 +27,10 @@ function renderAlbum(props) {
       <Link
         data-testid={ `link-to-album-${collectionId}` }
         to={ `/album/${collectionId}` }
-      />
+      >
+        {collectionName}
+
+      </Link>
     </div>
   );
 }
