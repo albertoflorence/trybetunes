@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { searchValidate } from '../validate';
-import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import { searchValidate } from '../../validate';
+import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 
 function renderAlbum(props) {
   const {
@@ -28,7 +28,6 @@ function renderAlbum(props) {
         to={ `/album/${collectionId}` }
       >
         {collectionName}
-
       </Link>
     </div>
   );
