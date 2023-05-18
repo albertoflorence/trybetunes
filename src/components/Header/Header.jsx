@@ -8,6 +8,25 @@ import './header.css';
 import Star from '../icons/Star';
 import Profile from '../icons/Profile';
 
+const links = [{
+  Icon: Search,
+  testid: 'link-to-search',
+  text: 'Search',
+  to: '/search',
+},
+{
+  Icon: Star,
+  testid: 'link-to-favorites',
+  text: 'Favorite',
+  to: '/favorites',
+},
+{
+  Icon: Profile,
+  testid: 'link-to-search',
+  text: 'Profile',
+  to: '/profile',
+}];
+
 export default function Header() {
   const [user, setUser] = useState({});
 
@@ -27,36 +46,29 @@ export default function Header() {
 
   return (
     <header data-testid="header-component" className="header">
-      <Logo small />
-      <nav className="header-navigation">
-        <div>
-          <NavLink data-testid="link-to-search" to="/search" className="navigation-link">
-            <Search />
-            Search
-          </NavLink>
-          <NavLink
-            data-testid="link-to-favorites"
-            to="/favorites"
-            className="navigation-link"
-          >
-            <Star />
-            Favorites
-          </NavLink>
-          <NavLink
-            data-testid="link-to-profile"
-            to="/profile"
-            className="navigation-link"
-          >
-            <Profile />
-            Profile
-          </NavLink>
-        </div>
-      </nav>
-      <span
-        data-testid="header-user-name"
-      >
-        {user.name ? renderProfile : 'Carregando...'}
-      </span>
+      <section className="header-content">
+        <Logo small />
+        <nav className="header-navigation">
+          <div>
+            {links.map(({ Icon, testid, text, to }) => (
+              <NavLink
+                key={ text }
+                data-testid={ testid }
+                to={ to }
+                className="navigation-link"
+              >
+                <Icon />
+                {text}
+              </NavLink>
+            ))}
+          </div>
+        </nav>
+        <span
+          data-testid="header-user-name"
+        >
+          {user.name ? renderProfile : 'Carregando...'}
+        </span>
+      </section>
     </header>
   );
 }

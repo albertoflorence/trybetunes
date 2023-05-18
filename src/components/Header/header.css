@@ -1,10 +1,15 @@
 .header {
+  width: 250px;
+}
+
+.header-content {
   align-items: flex-start;
   background: white;
   display: flex;
   flex-direction: column;
   height: 100vh;
   padding: 40px;
+  position: fixed;
   width: 250px;
 }
 
