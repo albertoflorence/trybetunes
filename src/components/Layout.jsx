@@ -5,7 +5,7 @@ import Header from './Header';
 
 export default function Layout({ children }) {
   return (
-    <div>
+    <div className="layout">
       <Header />
       {children}
     </div>

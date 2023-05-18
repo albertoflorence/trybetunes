@@ -32,3 +32,12 @@ button:disabled {
 button:disabled:hover {
   filter: none;
 }
+
+.layout {
+  display: flex;
+  width: 100%;
+}
+
+.layout > *:last-child {
+  flex: 1
+}

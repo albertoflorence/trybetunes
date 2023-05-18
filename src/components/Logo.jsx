@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function Logo() {
+export default function Logo({ small = false }) {
   return (
     <svg
-      width="188"
-      height="105"
+      width={ small ? '170' : '188' }
+      height={ small ? '95' : '105' }
       viewBox="0 0 188 105"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -95,3 +96,7 @@ export default function Logo() {
     </svg>
   );
 }
+
+Logo.propTypes = {
+  small: PropTypes.bool,
+};
