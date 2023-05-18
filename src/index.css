@@ -1,5 +1,17 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #003BE5;
+  --color-secondary: #00D5E2;
+  --gradient-primary: linear-gradient(123.66deg, #003BE5 12.08%, #00D5E2 86.52%);
+  --gradient-secondary: linear-gradient(289.33deg, #003BE5 -3.32%, #00D5E2 72.67%);
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
