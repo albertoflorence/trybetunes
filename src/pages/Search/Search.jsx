@@ -30,7 +30,7 @@ function renderAlbum(props) {
 function renderShowcase({ text, albums }) {
   return (
     <div className="search-content">
-      {albums.length && (
+      {albums.length > 0 && (
         <h1>
           {'Resultado de álbuns de: '}
           {text}
