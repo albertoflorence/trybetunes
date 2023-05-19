@@ -1,0 +1,24 @@
+.ellipseLight {
+  border-radius: 100%;
+  position: absolute;
+}
+
+.ellipseLight.border.primary {
+  border: 2px solid var(--color-primary);
+}
+
+.ellipseLight.border.secondary {
+  border: 2px solid var(--color-secondary);
+}
+
+.ellipseLight.light {
+  filter: blur(35.5px);
+}
+
+.ellipseLight.light.primary {
+  background-color: var(--color-primary);
+}
+
+.ellipseLight.light.secondary {
+  background-color: var(--color-secondary);
+}

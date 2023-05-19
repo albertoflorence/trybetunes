@@ -5,20 +5,15 @@ import { searchValidate } from '../../validate';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import './search.css';
 import Loading from '../../components/Loading';
+import EllipseLight from '../../components/EllipseLight/EllipseLight';
 
 function renderAlbum(props) {
   const { artistName, collectionId, collectionName, artworkUrl100 } = props;
   return (
     <div key={ collectionId } className="search-album">
-      <Link
-        data-testid={ `link-to-album-${collectionId}` }
-        to={ `/album/${collectionId}` }
-      >
+      <Link data-testid={ `link-to-album-${collectionId}` } to={ `/album/${collectionId}` }>
         <div className="search-album--image">
-          <img
-            src={ artworkUrl100.replace('100x100bb', '200x200bb') }
-            alt={ artistName }
-          />
+          <img src={ artworkUrl100.replace('100x100bb', '200x200bb') } alt={ artistName } />
         </div>
         <p>{artistName}</p>
         <p>{collectionName}</p>
@@ -87,6 +82,19 @@ export default function Search() {
   return (
     <section data-testid="page-search" className="search">
       <form onSubmit={ handleSubmit } className="search-form">
+        <EllipseLight
+          size="430px"
+          top="-300px"
+          right="180px"
+        />
+        <EllipseLight
+          type="border"
+          color="secondary"
+          size="600px"
+          right="-300px"
+          top="-400px"
+        />
+
         <div className="search-input">
           <input
             data-testid="search-artist-input"

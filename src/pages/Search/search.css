@@ -1,11 +1,13 @@
 .search {
   background-color: #eff3f9;
   min-height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 .search-form {
   align-items: center;
-  background-image: var(--gradient-primary);
+  background: linear-gradient(123.66deg, #003be5 12.08%, #00d5e2 86.52%);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   display: flex;
   font-size: 14px;
@@ -56,6 +58,7 @@
   font-weight: 700;
   margin-left: 8px;
   padding: 12px 22px;
+  text-transform: uppercase;
   transition: filter , background , 0.2s ease-out;
 }
 
