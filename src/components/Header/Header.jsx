@@ -22,7 +22,7 @@ const links = [{
 },
 {
   Icon: Profile,
-  testid: 'link-to-search',
+  testid: 'link-to-profile',
   text: 'Profile',
   to: '/profile',
 }];
