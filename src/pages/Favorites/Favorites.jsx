@@ -4,6 +4,7 @@ import MusicCard from '../../components/MusicCard';
 import { getFavoriteSongs } from '../../services/favoriteSongsAPI';
 import './favorites.css';
 import Loading from '../../components/Loading/Loading';
+import EllipseLight from '../../components/EllipseLight/EllipseLight';
 
 export default function Favorites() {
   const [items, setItems] = useState([]);
@@ -23,6 +24,18 @@ export default function Favorites() {
   return (
     <section data-testid="page-favorites" className="favorites">
       <header className="favorites-header">
+        <EllipseLight
+          type="border"
+          color="secondary"
+          size="600px"
+          left="-300px"
+          bottom="-500px"
+        />
+        <EllipseLight
+          size="430px"
+          right="-250px"
+          top="-220px"
+        />
         <h1>Músicas Favoritas</h1>
       </header>
       <section className="favorites-content">
