@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getUser } from '../../services/userAPI';
-import './profile.css';
 import Loading from '../../components/Loading/Loading';
+import './profile.css';
 
 export default function Profile() {
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,9 @@ export default function Profile() {
     <section data-testid="page-profile" className="profile">
       <header className="profile-header">
         {loading || (
-          <img data-testid="profile-image" src={ user.image } alt={ user.name } />
+          <div className="profile-avatar">
+            <img src={ user.image } alt={ user.name } />
+          </div>
         )}
       </header>
       {loading ? (

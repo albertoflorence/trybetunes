@@ -90,6 +90,7 @@ export default function Edit() {
             name="image"
             onChange={ handleChange }
             className="edit-image"
+            placeholder="Insira um link"
           />
           <button
             data-testid="edit-button-save"

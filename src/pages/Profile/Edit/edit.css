@@ -77,6 +77,10 @@
   top: 145px;
 }
 
+.edit-image::placeholder {
+  text-align: center;
+}
+
 .edit-button {
   background-color: var(--color-primary);
   border: none;
