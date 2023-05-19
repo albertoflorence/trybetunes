@@ -7,6 +7,13 @@
   height: 210px;
   margin-bottom: 30px;
   padding-left: 90px;
+  position: relative;
+}
+
+.profile-lights {
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
 }
 
 .profile-avatar {

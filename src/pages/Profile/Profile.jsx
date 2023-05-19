@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { getUser } from '../../services/userAPI';
 import Loading from '../../components/Loading/Loading';
 import './profile.css';
+import EllipseLight from '../../components/EllipseLight/EllipseLight';
 
 export default function Profile() {
   const [loading, setLoading] = useState(false);
@@ -19,6 +20,16 @@ export default function Profile() {
   return (
     <section data-testid="page-profile" className="profile">
       <header className="profile-header">
+        <div className="profile-lights">
+          <EllipseLight size="430px" top="-50px" left="-150px" />
+          <EllipseLight
+            type="border"
+            color="secondary"
+            size="600px"
+            left="75px"
+            top="-400px"
+          />
+        </div>
         {loading || (
           <div className="profile-avatar">
             <img src={ user.image } alt={ user.name } />
