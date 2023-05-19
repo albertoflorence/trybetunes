@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Search from './pages/Search';
 import Album from './pages/Album';
 import Favorites from './pages/Favorites';
-import Profile from './pages/Profile/page';
+import Profile from './pages/Profile';
 import Edit from './pages/Profile/Edit';
 import NotFound from './pages/NotFound';
 import Layout from './components/Layout';

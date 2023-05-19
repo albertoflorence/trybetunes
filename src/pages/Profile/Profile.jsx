@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Link } from 'react-router-dom';
+
 import { getUser } from '../../services/userAPI';
+import './profile.css';
 
 export default function Profile() {
   const [loading, setLoading] = useState(false);
@@ -14,18 +16,20 @@ export default function Profile() {
     handleUser();
   }, []);
   return (
-    <section data-testid="page-profile">
+    <section data-testid="page-profile" className="profile">
+      <header className="profile-header">
+        <img data-testid="profile-image" src={ user.image } alt={ user.name } />
+      </header>
       {loading ? (
         <p>Carregando...</p>
       ) : (
-        <div>
-          <h1>Perfil</h1>
+        <div className="profile-content">
+          <h3>Nome</h3>
           <p>{user.name}</p>
+          <h3>E-mail</h3>
           <p>{user.email}</p>
+          <h3>Descrição</h3>
           <p>{user.description}</p>
-          <div>
-            <img data-testid="profile-image" src={ user.image } alt={ user.name } />
-          </div>
           <Link to="/profile/edit">Editar perfil</Link>
         </div>
       )}

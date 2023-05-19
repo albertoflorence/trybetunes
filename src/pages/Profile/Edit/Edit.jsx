@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { getUser, updateUser } from '../../services/userAPI';
-import { editUserValidate } from '../../validate/editUser';
+import { useHistory } from 'react-router-dom';
+
+import { getUser, updateUser } from '../../../services/userAPI';
+import { editUserValidate } from '../../../validate/editUser';
+import './edit.css';
 
 export default function Edit() {
   const [loading, setLoading] = useState(false);
@@ -31,7 +33,7 @@ export default function Edit() {
   if (loading) return <p>Carregando...</p>;
 
   return (
-    <section data-testid="page-profile-edit">
+    <section data-testid="page-profile-edit" className="edit">
       <form onSubmit={ handleSubmit }>
         <input
           data-testid="edit-input-name"

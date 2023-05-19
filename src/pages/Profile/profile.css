@@ -1,0 +1,58 @@
+.profile {
+  background-color: #eff3f9;
+}
+
+.profile-header {
+  background-image: linear-gradient(233.85deg, #003be5 9.07%, #00d5e2 61.81%);
+  height: 210px;
+  padding-left: 90px;
+}
+
+.profile-header > img {
+  background-color: linear-gradient(233.85deg, #003be5 9.07%, #00d5e2 61.81%);
+  border-radius: 100%;
+  box-shadow: -9px 8px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 220px;
+  transform: translateY(50%);
+  width: 220px;
+}
+
+.profile-content {
+  padding: 30px 350px;
+}
+
+.profile-content > h3 {
+  color: #3d495c;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.profile-content > p {
+  color: #3d495c;
+  font-size: 14px;
+  line-height: 150%;
+  margin-bottom: 28px;
+}
+
+.profile-content > p:last-of-type {
+  margin-bottom: 48px;
+}
+
+.profile-content > a {
+  background-color: var(--color-primary);
+  border-radius: 100px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+  padding: 14px 26px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: filter 0.2s ease-out;
+}
+
+.profile-content > a:hover {
+  filter: brightness(0.7);
+}
