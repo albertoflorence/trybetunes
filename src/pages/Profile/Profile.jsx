@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { getUser } from '../../services/userAPI';
 import './profile.css';
+import Loading from '../../components/Loading/Loading';
 
 export default function Profile() {
   const [loading, setLoading] = useState(false);
@@ -18,10 +19,12 @@ export default function Profile() {
   return (
     <section data-testid="page-profile" className="profile">
       <header className="profile-header">
-        <img data-testid="profile-image" src={ user.image } alt={ user.name } />
+        {loading || (
+          <img data-testid="profile-image" src={ user.image } alt={ user.name } />
+        )}
       </header>
       {loading ? (
-        <p>Carregando...</p>
+        <Loading color="secondary" textColor="gray" />
       ) : (
         <div className="profile-content">
           <h3>Nome</h3>

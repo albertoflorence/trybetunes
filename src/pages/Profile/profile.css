@@ -5,6 +5,7 @@
 .profile-header {
   background-image: linear-gradient(233.85deg, #003be5 9.07%, #00d5e2 61.81%);
   height: 210px;
+  margin-bottom: 30px;
   padding-left: 90px;
 }
 
@@ -18,7 +19,7 @@
 }
 
 .profile-content {
-  padding: 30px 350px;
+  padding: 0 350px;
 }
 
 .profile-content > h3 {
