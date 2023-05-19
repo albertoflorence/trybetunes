@@ -6,6 +6,7 @@ import { getUser, updateUser } from '../../../services/userAPI';
 import { editUserValidate } from '../../../validate/editUser';
 import './edit.css';
 import Loading from '../../../components/Loading/Loading';
+import EllipseLight from '../../../components/EllipseLight/EllipseLight';
 
 const inputs = [
   {
@@ -61,6 +62,16 @@ export default function Edit() {
   return (
     <section data-testid="page-profile-edit" className="edit">
       <header className="edit-header">
+        <div className="edit-lights">
+          <EllipseLight size="430px" top="50%" right="100px" />
+          <EllipseLight
+            type="border"
+            color="secondary"
+            size="600px"
+            top="22%"
+            right="82%"
+          />
+        </div>
         {loading || (
           <div className="edit-avatar">
             <img src={ user.image } alt={ user.name } />

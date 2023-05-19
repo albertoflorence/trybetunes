@@ -7,6 +7,13 @@
   height: 210px;
   margin-bottom: 30px;
   padding-left: 90px;
+  position: relative;
+}
+
+.edit-lights {
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
 }
 
 .edit-avatar {
@@ -26,7 +33,7 @@
 }
 
 .edit-content {
-  padding: 0 350px;
+  margin-left: 350px;
   position: relative;
 }
 
@@ -39,11 +46,11 @@
   color: #3d495c;
   font-size: 16px;
   font-weight: 700;
-  line-height: 150%;
+  line-height: 200%;
 }
 
 .edit-inputGroup > label {
-  color: #3d495c;
+  color: #616161;
   font-size: 12px;
 }
 
@@ -71,10 +78,10 @@
 .edit-image {
   background-color: transparent;
   border: 1px solid #3d495c;
-  left: 110px;
+  left: -240px;
   padding: 8px;
   position: absolute;
-  top: 145px;
+  top: 125px;
 }
 
 .edit-image::placeholder {
