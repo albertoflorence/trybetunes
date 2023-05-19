@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+
+import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
+import './musicCard.css';
+import Favorite from '../icons/Favorite';
+import Spinner from '../Spinner/Spinner';
 
 export default function MusicCard({ onChange = undefined, ...props }) {
   const { previewUrl, trackName, trackId } = props;
@@ -23,7 +27,7 @@ export default function MusicCard({ onChange = undefined, ...props }) {
   };
 
   return (
-    <div>
+    <div className="musicCard">
       <span>{trackName}</span>
       <audio data-testid="audio-component" src={ previewUrl } controls>
         <track kind="captions" />
@@ -31,14 +35,13 @@ export default function MusicCard({ onChange = undefined, ...props }) {
         <code>audio</code>
       </audio>
       {loading ? (
-        <span>Carregando...</span>
+        <Spinner />
       ) : (
-        <input
+        <Favorite
           data-testid={ `checkbox-music-${trackId}` }
-          type="checkbox"
-          checked={ favorite }
-          onChange={ handleChange }
+          onClick={ handleChange }
           aria-label="Favorita"
+          filled={ favorite }
         />
       )}
     </div>

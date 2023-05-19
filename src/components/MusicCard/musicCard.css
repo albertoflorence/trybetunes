@@ -1,0 +1,24 @@
+.musicCard {
+  align-items: center;
+  display: flex;
+  padding: 18px 0;
+  width: max-content;
+}
+
+.musicCard > span {
+  align-items: center;
+  color: #001813;
+  font-size: 14px;
+  line-height: 14px;
+  margin-right: 8px;
+  max-height: 54px;
+  width: 130px;
+}
+
+.musicCard svg {
+  cursor: pointer;
+}
+
+audio {
+  margin-right: 38px;
+}
