@@ -9,7 +9,7 @@
 }
 
 .profile-header > img {
-  background-color: linear-gradient(233.85deg, #003be5 9.07%, #00d5e2 61.81%);
+  background-color: gray;
   border-radius: 100%;
   box-shadow: -9px 8px 8px 0 rgba(0, 0, 0, 0.2);
   height: 220px;

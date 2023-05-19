@@ -1,3 +1,97 @@
 .edit {
+  background-color: #eff3f9;
+}
+
+.edit-header {
+  background-image: linear-gradient(145.17deg, #003be5 9.03%, #00d5e2 48.7%);
+  height: 210px;
+  margin-bottom: 30px;
+  padding-left: 90px;
+}
+
+.edit-avatar {
+  background-color: gray;
+  border-radius: 100%;
+  box-shadow: -9px 8px 8px 0 rgba(0, 0, 0, 0.2);
+  color: gray;
+  height: 220px;
+  overflow: hidden;
+  transform: translateY(50%);
+  width: 220px;
+}
+
+.edit-avatar > img {
+  height: 100%;
+  width: 100%;
+}
+
+.edit-content {
+  padding: 0 350px;
+  position: relative;
+}
+
+.edit-inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-inputGroup > h3 {
+  color: #3d495c;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.edit-inputGroup > label {
+  color: #3d495c;
+  font-size: 12px;
+}
+
+.edit-inputGroup > input, textarea {
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid #3d495c;
+  margin-bottom: 22px;
+  margin-top: 12px;
+  outline: none;
+  padding: 8px;
+  width: 288px;
+}
+
+.edit-inputGroup .edit-name {
+  background-color: transparent;
+}
+
+.edit-inputGroup .edit-description {
+  height: 106px;
+  overflow: hidden;
+  width: 490px;
+}
+
+.edit-image {
+  background-color: transparent;
+  border: 1px solid #3d495c;
+  left: 110px;
+  padding: 8px;
+  position: absolute;
+  top: 145px;
+}
+
+.edit-button {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 100px;
   color: white;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 14px;
+  padding: 14px 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: filter 0.2s ease-out;
+}
+
+.edit-button:hover {
+  filter: brightness(0.7);
 }
