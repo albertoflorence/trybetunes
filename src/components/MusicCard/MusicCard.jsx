@@ -5,8 +5,9 @@ import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSo
 import './musicCard.css';
 import Favorite from '../icons/Favorite';
 import Spinner from '../Spinner/Spinner';
+import clsx from '../../utils/clsx';
 
-export default function MusicCard({ onChange = undefined, ...props }) {
+export default function MusicCard({ onChange = undefined, className = '', ...props }) {
   const { previewUrl, trackName, trackId } = props;
   const [favorite, setFavorite] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -32,7 +33,7 @@ export default function MusicCard({ onChange = undefined, ...props }) {
   };
 
   return (
-    <div className="musicCard">
+    <div className={ clsx('musicCard', className) }>
       <span>{trackName}</span>
       <audio data-testid="audio-component" src={ previewUrl } controls>
         <track kind="captions" />
@@ -57,5 +58,6 @@ MusicCard.propTypes = {
   previewUrl: PropTypes.string.isRequired,
   trackName: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
+  className: PropTypes.string,
   onChange: PropTypes.func,
 };
