@@ -5,8 +5,8 @@
   border-radius: 50%;
   box-sizing: border-box;
   display: inline-block;
-  height: 22px;
-  width: 22px;
+  height: 23px;
+  width: 23px;
 }
 
 @keyframes rotation {

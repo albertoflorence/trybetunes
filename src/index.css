@@ -40,5 +40,6 @@ button:disabled:hover {
 }
 
 .layout > *:last-child {
-  flex: 1
+  flex: 1;
+  min-height: 100vh;
 }

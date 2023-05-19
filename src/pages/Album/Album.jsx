@@ -20,21 +20,26 @@ export default function Album({ id }) {
     };
     handleGetMusic();
   }, [id]);
-  if (loading) return null;
+
   return (
     <section data-testid="page-album" className="album">
       <header className="album-header">
-        <img
-          src={ info.artworkUrl100.replace('100x100', '200x200') }
-          alt={ info.collectionName }
-        />
-        <p data-testid="artist-name">{info.artistName}</p>
-        <p data-testid="album-name">{info.collectionName}</p>
+        {loading || (
+          <>
+            <img
+              src={ info.artworkUrl100.replace('100x100', '200x200') }
+              alt={ info.collectionName }
+            />
+            <p data-testid="artist-name">{info.artistName}</p>
+            <p data-testid="album-name">{info.collectionName}</p>
+          </>
+        )}
       </header>
       <div className="album-content">
-        {tracks.map(({ trackId, ...props }) => (
-          <MusicCard key={ trackId } trackId={ trackId } { ...props } />
-        ))}
+        {loading
+          || tracks.map(({ trackId, ...props }) => (
+            <MusicCard key={ trackId } trackId={ trackId } { ...props } />
+          ))}
       </div>
     </section>
   );

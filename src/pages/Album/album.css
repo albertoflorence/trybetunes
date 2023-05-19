@@ -3,7 +3,7 @@
 }
 
 .album-header {
-  background-image: linear-gradient(226.56deg, #003be5 16.7%, #00d5e2 61.59%);
+  background-image: linear-gradient(195deg, #00d5e2 35%, #003be5 75%);
   display: flex;
   flex-direction: column;
   height: 210px;
