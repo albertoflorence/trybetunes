@@ -9,12 +9,17 @@ import Spinner from '../Spinner/Spinner';
 export default function MusicCard({ onChange = undefined, ...props }) {
   const { previewUrl, trackName, trackId } = props;
   const [favorite, setFavorite] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getFavoriteSongs()
-      .then((songs) => songs.some((song) => song.trackId === trackId))
-      .then(setFavorite);
+    const handleFavoriteSongs = async () => {
+      setLoading(true);
+      await getFavoriteSongs()
+        .then((songs) => songs.some((song) => song.trackId === trackId))
+        .then(setFavorite);
+      setLoading(false);
+    };
+    handleFavoriteSongs();
   }, [trackId]);
 
   const handleChange = async () => {
