@@ -11,19 +11,19 @@ import Profile from '../icons/Profile';
 const links = [{
   Icon: Search,
   testid: 'link-to-search',
-  text: 'Search',
+  text: 'Pesquisa',
   to: '/search',
 },
 {
   Icon: Star,
   testid: 'link-to-favorites',
-  text: 'Favorite',
+  text: 'Favoritas',
   to: '/favorites',
 },
 {
   Icon: Profile,
   testid: 'link-to-profile',
-  text: 'Profile',
+  text: 'Perfil',
   to: '/profile',
 }];
 
@@ -38,10 +38,10 @@ export default function Header() {
   }, [setUser]);
 
   const renderProfile = (
-    <div className="header-profile">
+    <>
       <img src="https://avatars.githubusercontent.com/u/16692794?v=4" alt="Foto do usuário" />
       <span>{user.name}</span>
-    </div>
+    </>
   );
 
   return (
@@ -63,11 +63,12 @@ export default function Header() {
             ))}
           </div>
         </nav>
-        <span
+        <div
           data-testid="header-user-name"
+          className="header-profile"
         >
           {user.name ? renderProfile : 'Carregando...'}
-        </span>
+        </div>
       </section>
     </header>
   );

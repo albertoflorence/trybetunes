@@ -32,6 +32,7 @@
   color: #444955;
   display: flex;
   gap: 16px;
+  height: 40px;
 }
 
 .header-profile > img {
