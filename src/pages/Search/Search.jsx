@@ -11,9 +11,15 @@ function renderAlbum(props) {
   const { artistName, collectionId, collectionName, artworkUrl100 } = props;
   return (
     <div key={ collectionId } className="search-album">
-      <Link data-testid={ `link-to-album-${collectionId}` } to={ `/album/${collectionId}` }>
+      <Link
+        data-testid={ `link-to-album-${collectionId}` }
+        to={ `/album/${collectionId}` }
+      >
         <div className="search-album--image">
-          <img src={ artworkUrl100.replace('100x100bb', '200x200bb') } alt={ artistName } />
+          <img
+            src={ artworkUrl100.replace('100x100bb', '200x200bb') }
+            alt={ artistName }
+          />
         </div>
         <p>{artistName}</p>
         <p>{collectionName}</p>
