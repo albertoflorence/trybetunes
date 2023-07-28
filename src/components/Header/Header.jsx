@@ -39,7 +39,7 @@ export default function Header() {
 
   const renderProfile = (
     <>
-      <img src="https://avatars.githubusercontent.com/u/16692794?v=4" alt="Foto do usuário" />
+      <img src={ user.image } alt="Foto do usuário" />
       <span>{user.name}</span>
     </>
   );
